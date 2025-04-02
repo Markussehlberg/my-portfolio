@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markus Sehlberg - Projects</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Markus.</div>
+    <ul class="nav-links nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section small-hero">
+    <h1>My Projects</h1>
+  </header>
+
+  <main>
+    <section class="projects-section">
+      <ul>
+        <li><strong>MealPlanner App:</strong> C# &amp; SQL-baserad app för att hantera matbudgetar.</li>
+        <li><strong>Movie Recommender:</strong> Web app med AI för personliga filmtips.</li>
+        <li><strong>Portfolio Website:</strong> Denna sajt, byggd med HTML &amp; CSS för att visa mitt arbete.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+  </footer>
+  <script>
+    // On page load, ensure the body is fully visible
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.classList.remove("fade-out");
+    });
+  
+    // Add click listeners to all navigation links
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        // Skip external links or ones opening in new tabs
+        if (this.getAttribute("target") === "_blank") return;
+        
+        e.preventDefault();
+        const href = this.getAttribute("href");
+  
+        // Trigger the fade out effect
+        document.body.classList.add("fade-out");
+  
+        // Wait for the transition to complete before redirecting
+        setTimeout(function() {
+          window.location.href = href;
+        }, 300); // Adjust this timeout to match your CSS transition duration
+      });
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* 1) Make sure html and body occupy the full browser height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* 2) BODY STYLING */
+  body {
+    background: url('portfolioBackgroundd.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s, color 0.3s;
+    opacity: 1;
+  }
+  
+  /* Fade transition for the entire page */
+  body.fade-out {
+    opacity: 0;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 800;
+  }
+  
+  /* LOGO */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  /* NAV LINKS */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #0d0d0d;
+    background-color: #24d199;
+  }
+  
+  /* Right-aligned nav for non-home pages */
+  .nav-right {
+    margin-left: auto;
+    margin-right: -1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(-2cm);
+    margin-top: 0.5cm;
+  }
+  
+  /* HOME PAGE NAV: center the menu & shift it down a bit */
+  .home-page .nav-links {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+    transform: translateX(-50px);
+  }
+  
+
+  .linkedin-icon, .github-icon {
+    width: 24px;
+    height: 24px;
+    filter: none; 
+  }
+  
+  /* HERO SECTION */
+  .hero-section {
+    padding: 4rem 2rem;
+    text-align: left;
+    margin-top: 6cm;
+  }
+  
+  /* Flex container for hero text and image */
+  .hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* HERO TEXT */
+  .hero-text {
+    flex: 1;
+    margin-right: 2rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .hero-text h2.role {
+    font-size: 2rem;
+    color: #24d199;
+    margin-bottom: 1.5rem;
+  }
+  .intro-text {
+    max-width: 80%;
+    margin-right: auto;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  .hero-text p {
+    font-size: 1.125rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  /* HERO IMAGE */
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* BUTTON STYLES */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #24d199;
+    color: #0d0d0d;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #1ca67b;
+  }
+  
+  /* If you add a secondary button like "Let's Talk" */
+  .talk-button {
+    background-color: transparent;
+    border: 2px solid #24d199;
+    color: #24d199;
+    margin-left: 1rem;
+  }
+  
+  .talk-button:hover {
+    background-color: #24d199;
+    color: #0d0d0d;
+  }
+  
+  /* MAIN SECTIONS */
+  main section {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* LISTS */
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  ul li {
+    margin-bottom: 1rem;
+  }
+  
+  /* LINKS */
+  a {
+    color: #24d199;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* FOOTER */
+  footer {
+    position: relative;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .footer-left {
+    position: absolute;
+    left: 1rem;
+    bottom: 3rem;
+    display: flex;       /* Added flex display */
+    gap: 1rem;           /* Adjusts spacing between icons */
+    align-items: center; /* Vertically centers the icons */
+  }

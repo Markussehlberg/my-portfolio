@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markus - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Döljer nav-länkarna initialt och förbereder för pop-up animation */
+    .nav-links li {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .nav-links li.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="fade-out">
+  <nav class="navbar">
+    <div class="logo">Markus.</div>
+    <ul class="nav-links nav-right">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- HERO SECTION -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <!-- Ändrad rubriktext -->
+        <h1 style="margin-top: -1cm;">Hi there, My name is Markus Sehlberg</h1>
+        <!-- Övriga element förblir statiska -->
+        <h2 class="role" style="margin-top: -0.5cm;">IT-student from Lund University</h2>
+        <p class="intro-text">
+            Hello and welcome to my portfolio.
+            I’m an IT student from Sweden with a strong passion for data analysis and business intelligence. I enjoy turning data into insights and using technology to create smart, user-focused digital solutions. Feel free to learn more about me and my academical journey in this HTML and CSS-created portfolio.
+        </p>
+        <a href="contact.html" class="btn hire-me-button">Get in touch!</a>
+      </div>
+    </div>
+  </header>
+  
+  <footer>
+    <div class="footer-left">
+      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+        <img 
+          src="linkedin-2.png" 
+          alt="LinkedIn" 
+          class="linkedin-icon" 
+        />
+      </a>
+      <a href="https://github.com/markussehlberg" target="_blank">
+        <img 
+          src="github-sign-2.png" 
+          alt="GitHub" 
+          class="github-icon" 
+        />
+      </a>
+    </div>
+    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+  </footer>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Ta bort eventuell initial fade-out på body
+      document.body.classList.remove("fade-out");
+      
+      // Hämta h1-elementet med typningstexten
+      const h1 = document.querySelector('.hero-text h1');
+      const fullText = h1.innerHTML;
+      h1.innerHTML = ""; // Rensa texten för typningseffekt
+
+      // Typningseffektfunktion
+      function typeWriter(element, text, delay, callback) {
+        let i = 0;
+        let interval = setInterval(() => {
+          element.innerHTML += text.charAt(i);
+          i++;
+          if (i >= text.length) {
+            clearInterval(interval);
+            if (callback) callback();
+          }
+        }, delay);
+      }
+      
+      // Starta typningseffekten för h1 med 50ms mellan varje tecken
+      typeWriter(h1, fullText, 50, function() {
+        // När typningseffekten är klar, animera fram nav-länkarna en efter en
+        const navItems = document.querySelectorAll('.nav-links li');
+        navItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add('visible');
+          }, index * 100); // 100ms fördröjning mellan varje tab
+        });
+      });
+    });
+
+    // Befintlig fade-out vid navigering
+    const links = document.querySelectorAll("nav a, .hire-me-button");
+    links.forEach(link => {
+      link.addEventListener("click", function(e) {
+        if (this.getAttribute("target") === "_blank") return;
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        document.body.classList.add("fade-out");
+        setTimeout(function() {
+          window.location.href = href;
+        }, 300);
+      });
+    });
+  </script>
+  
+</body>
+</html>

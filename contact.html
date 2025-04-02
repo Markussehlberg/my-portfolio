@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markus Sehlberg - Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Markus.</div>
+    <ul class="nav-links nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section small-hero">
+    <h1>Contact</h1>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <p>Feel free to reach out at <a href="mailto:markus@example.com">markus@example.com</a></p>
+      <p>Or connect with me on <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank">LinkedIn</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+  </footer>
+  <script>
+    // On page load, ensure the body is fully visible
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.classList.remove("fade-out");
+    });
+  
+    // Add click listeners to all navigation links
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        // Skip external links or ones opening in new tabs
+        if (this.getAttribute("target") === "_blank") return;
+        
+        e.preventDefault();
+        const href = this.getAttribute("href");
+  
+        // Trigger the fade out effect
+        document.body.classList.add("fade-out");
+  
+        // Wait for the transition to complete before redirecting
+        setTimeout(function() {
+          window.location.href = href;
+        }, 300); // Adjust this timeout to match your CSS transition duration
+      });
+    });
+  </script>
+  
+</body>
+</html>
