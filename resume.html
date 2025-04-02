@@ -6,12 +6,116 @@
   <title>Markus Sehlberg - Resume</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 4px;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #24d199;
+      color: #000;
+    }
+    /* Resume Container with 90% opaque black background */
+    .resume-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+    /* Header */
+    .resume-header h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      color: #24d199;
+      letter-spacing: 1px;
+    }
+    /* Resume Sections */
+    .resume-section {
+      margin-bottom: 2rem;
+    }
+    .resume-section h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #24d199;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    /* Adjust left margin for section lists */
+    .resume-section ul {
+      list-style: none;
+      padding: 0;
+      margin-left: -0.5rem;  /* Reduced negative margin */
+    }
+    .resume-section li {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .resume-section p {
+      margin: 0.3rem 0;
+    }
+    .resume-section a {
+      color: #24d199;
+      text-decoration: none;
+    }
+    /* Sub-bullet list for professional experience bullet points */
+    .sub-bullets {
+      list-style-type: circle;  /* Using circles for bullets */
+      margin-left: 10px;
+      padding-left: 10px;
+    }
+    .sub-bullets li {
+      margin-bottom: 0.5rem;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">Markus.</div>
-    <ul class="nav-links nav-right">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html" class="active">Resume</a></li>
@@ -20,56 +124,125 @@
     </ul>
   </nav>
 
-  <header class="hero-section small-hero">
-    <h1>My Resume</h1>
-  </header>
+  <div class="resume-container">
+    <header class="resume-header">
+      <h1>Markus Sehlberg - Resume</h1>
+    </header>
 
-  <main>
-    <section class="resume-section">
+    <!-- Education -->
+    <section class="resume-section education">
       <h2>Education</h2>
       <ul>
-        <li>B.Sc. in Computer Science, University of Gothenburg</li>
-      </ul>
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript, C#, .NET, SQL, Git, Azure</li>
-      </ul>
-      <h2>Experience</h2>
-      <ul>
-        <li>IT Consultant at TechCo AB (2022–2024)</li>
+        <li>
+          <strong>Lund University</strong><br>
+          Bachelor of Science in Information Systems (Sys. Kand) <br>
+          <em>08/2023 - 06/2026</em> | GPA: 3.75/4.0
+        </li>
+        <li>
+          <strong>Linné University (Online)</strong><br>
+          Industrial Economics and Organisation <br>
+          <em>06/2024 - 08/2024</em> | GPA: 4.0/4.0
+        </li>
+        <li>
+          <strong>Högskolan i Gävle (Online)</strong><br>
+          Fundamental Dataprocessing (Excel) <br>
+          <em>02/2025 - 06/2025</em>
+        </li>
       </ul>
     </section>
-  </main>
+
+    <!-- Professional Experience -->
+    <section class="resume-section experience">
+      <h2>Professional Experiences</h2>
+      <ul>
+        <li>
+          <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden<br>
+          <em>03/2024 - 03/2025</em>
+          <ul class="sub-bullets">
+            <li>Led recruitment for the SAMDAY career fair, attracting 175+ students (18% increase).</li>
+            <li>Generated 230,000 SEK revenue and maintained strong company relationships.</li>
+            <li>Pitched SAMDAY 2025 participation to prospective partners.</li>
+            <li>Built and maintained a network with industry leaders.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden<br>
+          <em>06/2024 - 08/2024</em>
+          <ul class="sub-bullets">
+            <li>Delivered high-quality communication and service to clients.</li>
+            <li>Adapted to various work environments, including moving services and warehouse operations.</li>
+            <li>Managed inventory and collaborated with team members.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>CITY GROSS AB</strong> – Store Employee, Stockholm, Sweden<br>
+          <em>10/2022 - 08/2023</em>
+          <ul class="sub-bullets">
+            <li>Restocked shelves, managed inventory, and maintained store cleanliness.</li>
+            <li>Assisted customers to ensure a positive shopping experience.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section class="resume-section certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>
+          <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> – Microsoft Learn (Online)<br>
+          <em>08/2024</em>
+        </li>
+        <li>
+          <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong> – Microsoft Learn (Online)<br>
+          <em>01/2025</em>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Extracurricular Experiences -->
+    <section class="resume-section extracurricular">
+      <h2>Extracurricular Experiences</h2>
+      <ul>
+        <li>
+          <strong>Göteborgs Nation</strong>, Lund, Sweden<br>
+          <em>09/2023 - 06/2024</em>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills & Interests -->
+    <section class="resume-section skills">
+      <h2>Skills &amp; Interests</h2>
+      <ul>
+        <li><strong>Technical:</strong> Java, JavaFX, SQL, Azure, PowerBI, GitHub, UML, BPMN</li>
+        <li><strong>Languages:</strong> Swedish (native), English (C2), Spanish (A2)</li>
+        <li><strong>Interests:</strong> Social activities, food, student life, football, outdoor adventures</li>
+      </ul>
+    </section>
+  </div>
 
   <footer>
     <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
   </footer>
+  
   <script>
-    // On page load, ensure the body is fully visible
+    // Fade-out effect on navigation links
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
     });
-  
-    // Add click listeners to all navigation links
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
-        // Skip external links or ones opening in new tabs
         if (this.getAttribute("target") === "_blank") return;
-        
         e.preventDefault();
         const href = this.getAttribute("href");
-  
-        // Trigger the fade out effect
         document.body.classList.add("fade-out");
-  
-        // Wait for the transition to complete before redirecting
         setTimeout(function() {
           window.location.href = href;
-        }, 300); // Adjust this timeout to match your CSS transition duration
+        }, 300);
       });
     });
   </script>
-  
 </body>
 </html>

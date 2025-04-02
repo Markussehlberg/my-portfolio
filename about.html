@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,65 @@
   <title>Markus Sehlberg - About</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Additional styles specific to About page */
+    .about-hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-about-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .about-hero p {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    .about-content {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+    .about-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .about-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .about-card h3 {
+      color: #24d199;
+      margin-bottom: 0.75rem;
+    }
+    /* Updated bullet style for lists */
+    .about-card ul {
+      padding-left: 1.5rem;
+      list-style-type: circle;
+    }
+    .about-card li {
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .about-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">Markus.</div>
     <ul class="nav-links nav-right">
@@ -19,53 +76,94 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
-  <header class="hero-section small-hero">
+  
+  <header class="about-hero">
     <h1>About Me</h1>
+    <p>21 years old | Informatics Student at Lund University | Graduating 2026</p>
   </header>
-
+  
   <main>
-    <section class="about-section">
-      <h2>Learn more about me</h2>
-      <p>
-        I am an ambitious IT professional passionate about leveraging technology to solve 
-        business challenges. My experience includes front-end development, data analysis, 
-        and project management. In my free time, I enjoy exploring new frameworks and 
-        building side projects to keep my skills sharp.
-      </p>
-      <!-- Additional details can be added here -->
-    </section>
+    <div class="about-content">
+      <section class="about-section">
+        <div class="about-card">
+          <h3>Who Am I?</h3>
+          <p>
+            Hi, I'm Markus Sehlberg – a tech enthusiast with a passion for coding and innovation. I blend my academic pursuits with a lively student life, always looking to explore new ideas and push my limits.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>My Studies</h3>
+          <p>
+            I'm studying Informatics at Lund University, one of Sweden's most prestigious institutions. With a graduation set for 2026, I'm constantly immersed in projects that challenge and expand my technical skills.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Interests &amp; Hobbies</h3>
+          <p>
+            Outside of studies, I enjoy a vibrant social life:
+          </p>
+          <ul>
+            <li>Hanging out with friends</li>
+            <li>Embracing the student lifestyle</li>
+            <li>Watching and playing football</li>
+            <li>Exploring new tech trends and side projects</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>Career Goals</h3>
+          <p>
+            I'm actively looking for internship opportunities to gain hands-on experience in the tech industry. My goal is to build practical skills that will propel my career and help me contribute innovative solutions.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Skills &amp; Tools</h3>
+          <p>
+            I have hands-on experience with a range of technologies:
+          </p>
+          <ul>
+            <li>Programming: HTML, CSS, JavaScript, C#</li>
+            <li>Frameworks: .NET, React</li>
+            <li>Databases: SQL</li>
+            <li>Tools: Git, Azure</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>Fun Facts</h3>
+          <p>
+            A few things you might not know:
+          </p>
+          <ul>
+            <li>I love spontaneous road trips</li>
+            <li>I'm a huge football fan</li>
+            <li>I enjoy trying out new cuisines</li>
+            <li>I never back down from a good challenge</li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </main>
-
+  
   <footer>
     <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
   </footer>
+  
   <script>
-    // On page load, ensure the body is fully visible
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
     });
-  
-    // Add click listeners to all navigation links
+    
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
-        // Skip external links or ones opening in new tabs
         if (this.getAttribute("target") === "_blank") return;
-        
         e.preventDefault();
         const href = this.getAttribute("href");
-  
-        // Trigger the fade out effect
         document.body.classList.add("fade-out");
-  
-        // Wait for the transition to complete before redirecting
-        setTimeout(function() {
+        setTimeout(() => {
           window.location.href = href;
-        }, 300); // Adjust this timeout to match your CSS transition duration
+        }, 300);
       });
     });
   </script>
-  
 </body>
 </html>
