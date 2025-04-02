@@ -7,53 +7,106 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Page-specific styling for the projects page */
+    /* Global Page Styles */
     body {
       background: url('portfolioBackgroundd.jpg') no-repeat center center fixed;
       background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
     }
+    /* Reduced vertical padding on the hero section */
     .hero-section.small-hero {
-      padding: 4rem 2rem;
+      padding: 1rem 2rem; /* Reduced from 2rem to 1rem on the top */
       text-align: center;
       color: #fff;
     }
-    .projects-container {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 2rem;
+    /* Carousel Container */
+    .carousel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0.5rem auto 2rem; /* reduced top margin to push the slider upward */
+      overflow: hidden;
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
     }
-    .project-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Carousel Slides Wrapper */
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
     }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Each Slide */
+    .carousel-slide {
+      min-width: 100%;
+      padding: 2rem;
+      box-sizing: border-box;
+      text-align: center;
+      color: #fff;
     }
-    .project-card h2 {
+    .carousel-slide h2 {
       color: #24d199;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
     }
-    .project-card p {
-      margin-bottom: 1rem;
+    .carousel-slide span.date {
+      display: block;
+      font-size: 0.9rem;
       color: #ccc;
+      margin-bottom: 1rem;
     }
-    .project-card a {
+    .carousel-slide p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .carousel-slide a {
       text-decoration: none;
       color: #24d199;
       font-weight: 600;
-      transition: color 0.3s;
+      border: 1px solid #24d199;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
     }
-    .project-card a:hover {
-      color: #1ca67b;
+    .carousel-slide a:hover {
+      background-color: #24d199;
+      color: #0d0d0d;
+    }
+    /* Carousel Navigation Buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .carousel-btn.prev {
+      left: 1rem;
+    }
+    .carousel-btn.next {
+      right: 1rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .carousel-slide h2 {
+        font-size: 1.5rem;
+      }
+      .carousel-slide p {
+        font-size: 1rem;
+      }
+      .carousel-btn {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.8rem;
+      }
     }
   </style>
 </head>
@@ -71,55 +124,67 @@
   
   <!-- HERO SECTION -->
   <header class="hero-section small-hero">
-    <h1>My Projects</h1>
-    <p>Explore my repositories along with a short description of each project.</p>
+    <h1>My coding Projects</h1>
+    <p>View all my coding projects down below.</p>
   </header>
   
-  <!-- PROJECTS CONTAINER -->
+  <!-- CAROUSEL CONTAINER -->
   <main>
-    <div class="projects-container">
-      <!-- Project Card 1 -->
-      <div class="project-card">
-        <h2>Logistics System <span style="font-size:0.8rem;">(01/2024)</span></h2>
-        <p>A logistics system for managing vehicles and trucks across Sweden.</p>
-        <a href="https://github.com/lu-informatics/ht23-sysa21-isp-ht23-sysa21-gitignorerade.git" target="_blank">View Repository</a>
+    <div class="carousel-container">
+      <div class="carousel">
+        <!-- Slide 1 -->
+        <div class="carousel-slide">
+          <h2>Logistics System</h2>
+          <span class="date">(01/2024)</span>
+          <p>A system for managing vehicles and trucks across Sweden efficiently.</p>
+          <a href="https://github.com/lu-informatics/ht23-sysa21-isp-ht23-sysa21-gitignorerade.git" target="_blank">View Repository</a>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <h2>Project Management system</h2>
+          <span class="date">(09/2024)</span>
+          <p>An SQL Server-based application for managing projects and employee records seamlessly.</p>
+          <a href="https://github.com/lu-informatics/ht24-sysb23-ht24-sysb23-hackstreetboys.git" target="_blank">View Repository</a>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <h2>Recipe application</h2>
+          <span class="date">(03/2025)</span>
+          <p>A .NET MAUI application with SQL Server for managing ingredients and recommending recipes.</p>
+          <a href="https://github.com/lu-informatics/vt25-sysb24-progdesign-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+          <h2>Web API for Recipes</h2>
+          <span class="date">(03/2025)</span>
+          <p>A web API with robust database integration to manage recipes and ingredients efficiently.</p>
+          <a href="https://github.com/lu-informatics/vt25-sysb24-it-api-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+        </div>
+        <!-- Slide 5 -->
+        <div class="carousel-slide">
+          <h2>C# Client for Recipes</h2>
+          <span class="date">(03/2025)</span>
+          <p>A C# client that interacts with our web API to manage recipes and ingredients.</p>
+          <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+        </div>
+        <!-- Slide 6 (if intentional duplicate) -->
+        <div class="carousel-slide">
+          <h2>Java Client for Recipes</h2>
+          <span class="date">(03/2025)</span>
+          <p>A client application built in java for managing recipes through our API.</p>
+          <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+        </div>
+        <!-- Slide 7 -->
+        <div class="carousel-slide">
+          <h2>AI Recipe Recommendations</h2>
+          <span class="date">(03/2025)</span>
+          <p>Integration of GPT-4 to deliver AI-powered recipe recommendations based on available ingredients.</p>
+          <a href="https://github.com/lu-informatics/vt25-sysb24-si-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+        </div>
       </div>
-      <!-- Project Card 2 -->
-      <div class="project-card">
-        <h2>Project Management System <span style="font-size:0.8rem;">(09/2024)</span></h2>
-        <p>An SQL Server based application for managing projects and handling employee records.</p>
-        <a href="https://github.com/lu-informatics/ht24-sysb23-ht24-sysb23-hackstreetboys.git" target="_blank">View Repository</a>
-      </div>
-      <!-- Project Card 3 -->
-      <div class="project-card">
-        <h2>Recipe Recommender App <span style="font-size:0.8rem;">(03/2025)</span></h2>
-        <p>A .NET MAUI application with SQL Server that allows students to manage ingredients and get recipe recommendations.</p>
-        <a href="https://github.com/lu-informatics/vt25-sysb24-progdesign-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-      </div>
-      <!-- Project Card 4 -->
-      <div class="project-card">
-        <h2>Web API for Recipes <span style="font-size:0.8rem;">(03/2025)</span></h2>
-        <p>A web API created with database integration to support recipe and ingredient management.</p>
-        <a href="https://github.com/lu-informatics/vt25-sysb24-it-api-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-      </div>
-      <!-- Project Card 5 -->
-      <div class="project-card">
-        <h2>C# Client for Recipe Management <span style="font-size:0.8rem;">(03/2025)</span></h2>
-        <p>A C# client that makes HTTP/URL requests to the web API, managing ingredients and recipes.</p>
-        <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-      </div>
-      <!-- Project Card 6 (Duplicate if intentional, or adjust as needed) -->
-      <div class="project-card">
-        <h2>C# Client for Recipe Management <span style="font-size:0.8rem;">(03/2025)</span></h2>
-        <p>A C# client for managing ingredients and recipes via our web API.</p>
-        <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-      </div>
-      <!-- Project Card 7 -->
-      <div class="project-card">
-        <h2>AI Recipe Recommendations <span style="font-size:0.8rem;">(03/2025)</span></h2>
-        <p>Integrated GPT-4 to provide AI-powered recipe recommendations based on user-input ingredients.</p>
-        <a href="https://github.com/lu-informatics/vt25-sysb24-si-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-      </div>
+      <!-- Navigation Buttons -->
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
   </main>
   
@@ -139,11 +204,60 @@
   </footer>
   
   <script>
-    // Fade-out effect for smooth transitions
+    // Remove fade-out class for smooth transitions
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
     });
     
+    // Carousel functionality
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    prevBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+      updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+      updateCarousel();
+    });
+    
+    // Enable swipe functionality for touch devices
+    let startX = 0;
+    let isSwiping = false;
+    
+    carousel.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      isSwiping = true;
+    });
+    
+    carousel.addEventListener('touchmove', e => {
+      if (!isSwiping) return;
+      let moveX = e.touches[0].clientX;
+      let diff = startX - moveX;
+      if (diff > 50) {
+        nextBtn.click();
+        isSwiping = false;
+      } else if (diff < -50) {
+        prevBtn.click();
+        isSwiping = false;
+      }
+    });
+    
+    carousel.addEventListener('touchend', () => {
+      isSwiping = false;
+    });
+    
+    // Navigation links fade-out effect
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
