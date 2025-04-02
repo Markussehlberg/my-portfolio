@@ -6,9 +6,45 @@
   <title>Markus Sehlberg - Contact</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Contact Page Custom Styles */
+    .contact-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 8px;
+      color: #fff;
+    }
+    .contact-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .contact-item img {
+      width: 32px;
+      height: 32px;
+      margin-right: 1rem;
+    }
+    .contact-item span {
+      font-size: 1.1rem;
+    }
+    .contact-item a {
+      color: #24d199;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Markus.</div>
     <ul class="nav-links nav-right">
@@ -19,72 +55,68 @@
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
-
-  <header class="hero-section small-hero">
-    <h1>Contact</h1>
-  </header>
-
+  
+ 
+  
+  <!-- MAIN CONTACT CONTENT -->
   <main>
-    <section class="contact-section">
-      <p>Feel free to reach out at <a href="mailto:markus@example.com">markus@example.com</a></p>
-      <p>Or connect with me on <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank">LinkedIn</a>.</p>
-    </section>
+    <div class="contact-container">
+      <div class="contact-header">
+        <h2>Reach Out to Me</h2>
+        <p>I’m available via email, phone, LinkedIn, or GitHub. Choose the method that suits you best.</p>
+      </div>
+      <div class="contact-item">
+        <img src="email.png" alt="Email Icon">
+        <span>Email: <a href="mailto:markus_sehlberg@hotmail.com">markus_sehlberg</a></span>
+      </div>
+      <div class="contact-item">
+        <img src="linkedin-2.png" alt="LinkedIn Icon">
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">Markus Sehlberg</a></span>
+      </div>
+      <div class="contact-item">
+        <img src="phone-call.png" alt="Phone Icon">
+        <span>Phone: <a href="tel:0739636085">0739636085</a></span>
+      </div>
+      <div class="contact-item">
+        <img src="GitHub-sign-2.png" alt="GitHub Icon">
+        <span>GitHub: <a href="https://github.com/Markussehlberg" target="_blank">Markus Sehlberg</a></span>
+      </div>
+    </div>
   </main>
-
+  
+  <!-- FOOTER -->
   <footer>
     <div class="footer-left">
       <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-        <img 
-          src="linkedin-2.png" 
-          alt="LinkedIn" 
-          class="linkedin-icon" 
-        />
+        <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
       </a>
-      <a href="https://github.com/markussehlberg" target="_blank">
-        <img 
-          src="github-sign-2.png" 
-          alt="GitHub" 
-          class="github-icon" 
-        />
+      <a href="https://github.com/Markussehlberg" target="_blank">
+        <img src="GitHub-sign-2.png" alt="GitHub" class="github-icon" />
       </a>
       <a href="mailto:markus_sehlberg@hotmail.com">
-        <img 
-          src="email.png" 
-          alt="Email" 
-          class="email-icon" 
-        />
+        <img src="email.png" alt="Email" class="email-icon" />
       </a>
     </div>
     <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
   </footer>
   
-
+  <!-- FADE-OUT SCRIPT -->
   <script>
-    // On page load, ensure the body is fully visible
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
     });
-  
-    // Add click listeners to all navigation links
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
-        // Skip external links or ones opening in new tabs
         if (this.getAttribute("target") === "_blank") return;
-        
         e.preventDefault();
         const href = this.getAttribute("href");
-  
-        // Trigger the fade out effect
         document.body.classList.add("fade-out");
-  
-        // Wait for the transition to complete before redirecting
         setTimeout(function() {
           window.location.href = href;
-        }, 300); // Adjust this timeout to match your CSS transition duration
+        }, 300);
       });
     });
   </script>
-  
 </body>
 </html>
