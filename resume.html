@@ -6,6 +6,13 @@
   <title>Markus Sehlberg - Resume</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Prefetch-länkar för att ladda sidorna i förväg -->
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="about.html">
+  <link rel="prefetch" href="projects.html">
+  <link rel="prefetch" href="contact.html">
+  
   <style>
     /* Global Styles */
     body {
@@ -77,7 +84,7 @@
       flex: 1;
       min-width: 300px;
     }
-    /* Card Style (similar to .about-card) for each section */
+    /* Card Style for each section */
     .resume-card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 8px;
@@ -90,7 +97,7 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
-    /* Section Headings inside cards */
+    /* Section Headings */
     .resume-card h2 {
       font-size: 1.8rem;
       border-bottom: 2px solid #24d199;
@@ -98,10 +105,10 @@
       margin-bottom: 1rem;
       color: #fff;
     }
-    /* Timeline styling for milestones inside cards */
+    /* Timeline styling */
     .timeline {
       position: relative;
-      padding-left: 1.5rem; /* Adjust to position line & items */
+      padding-left: 1.5rem;
       margin-bottom: 1rem;
     }
     .timeline::before {
@@ -121,18 +128,18 @@
       content: '';
       position: absolute;
       left: -1rem;
-      top: 0rem; /* Adjust to center circle with text */
+      top: 0rem;
       width: 1.2rem;
       height: 1.2rem;
       background: #24d199;
       border-radius: 50%;
       transform: translateX(-50%);
     }
-    /* For standard bullet lists in each card */
+    /* Bullet lists */
     .resume-card ul {
-      list-style: disc;           /* Use small circle bullets */
-      padding-left: 1.5rem;       /* Indent bullets to the right */
-      margin: 0;                  /* Remove default margin */
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin: 0;
     }
     .resume-card li {
       margin-bottom: 1rem;
@@ -145,12 +152,12 @@
       color: #24d199;
       text-decoration: none;
     }
-    /* Sub-bullet list for professional experience bullet points */
+    /* Sub-bullet list */
     .sub-bullets {
       list-style-type: circle;
-      margin-left: 2rem;   /* Additional indent for sub-bullets */
+      margin-left: 2rem;
       padding-left: 0.5rem;
-      margin-top: 4rem;  /* Added margin to push down the sub-bullets */
+      margin-top: 4rem;
     }
     .sub-bullets li {
       margin-bottom: 1rem;
@@ -168,169 +175,171 @@
         flex-direction: column;
       }
     }
+    
+    /* Fade-out effekt på wrappern */
+    #page-wrapper {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+    #page-wrapper.fade-out {
+      opacity: 0;
+    }
   </style>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <span class="normal">M</span>
-      <span class="flip">A</span>
-      <span class="normal">R</span>
-      <span class="flip">K</span>
-      <span class="normal">U</span>
-      <span class="flip">S</span>.
-    </div>  
-    <ul class="nav-links nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="resume.html" class="active">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<body class="fade-out">
+  <!-- Wrapper för allt innehåll -->
+  <div id="page-wrapper">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="normal">M</span>
+        <span class="flip">A</span>
+        <span class="normal">R</span>
+        <span class="flip">K</span>
+        <span class="normal">U</span>
+        <span class="flip">S</span>.
+      </div>  
+      <ul class="nav-links nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-  <div class="resume-container">
-    <header class="resume-header">
-      <h1>Markus Sehlberg - Resume</h1>
-    </header>
+    <div class="resume-container">
+      <header class="resume-header">
+        <h1>Markus Sehlberg - Resume</h1>
+      </header>
 
-    <div class="resume-columns">
-      <!-- Left Column: Education and Professional Experiences -->
-      <div class="left-col">
-        <!-- Education Card -->
-        <div class="resume-card">
-          <h2>Education</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <strong>Lund University</strong><br>
-              Bachelor of Science in Information Systems (Sys. Kand) <br>
-              <em>08/2023 - 06/2026</em> | GPA: 3.75/4.0
+      <div class="resume-columns">
+        <!-- Left Column: Education and Professional Experiences -->
+        <div class="left-col">
+          <!-- Education Card -->
+          <div class="resume-card">
+            <h2>Education</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>Lund University</strong><br>
+                Bachelor of Science in Information Systems (Sys. Kand) <br>
+                <em>08/2023 - 06/2026</em> | GPA: 3.75/4.0
+              </div>
+              <div class="timeline-item">
+                <strong>Linné University (Online)</strong><br>
+                Industrial Economics and Organisation <br>
+                <em>06/2024 - 08/2024</em> | GPA: 4.0/4.0
+              </div>
+              <div class="timeline-item">
+                <strong>Högskolan i Gävle (Online)</strong><br>
+                Fundamental Dataprocessing (Excel) <br>
+                <em>02/2025 - 06/2025</em>
+              </div>
             </div>
-            <div class="timeline-item">
-              <strong>Linné University (Online)</strong><br>
-              Industrial Economics and Organisation <br>
-              <em>06/2024 - 08/2024</em> | GPA: 4.0/4.0
-            </div>
-            <div class="timeline-item">
-              <strong>Högskolan i Gävle (Online)</strong><br>
-              Fundamental Dataprocessing (Excel) <br>
-              <em>02/2025 - 06/2025</em>
+          </div>
+
+          <!-- Professional Experiences Card -->
+          <div class="resume-card">
+            <h2>Professional Experiences</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden <em>(03/2024 - 03/2025)</em>
+                <ul class="sub-bullets">
+                  <li>Led recruitment for the SAMDAY career fair, attracting 175+ students (18% increase).</li>
+                  <li>Generated 230,000 SEK revenue and maintained strong company relationships.</li>
+                  <li>Pitched SAMDAY 2025 participation to prospective partners.</li>
+                  <li>Built and maintained a network with industry leaders.</li>
+                </ul>
+              </div>
+              <div class="timeline-item">
+                <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden <em>(06/2024 - 08/2024)</em>
+                <ul class="sub-bullets">
+                  <li>Delivered high-quality communication and service to clients.</li>
+                  <li>Adapted to various work environments, including moving services and warehouse operations.</li>
+                  <li>Managed inventory and collaborated with team members.</li>
+                </ul>
+              </div>
+              <div class="timeline-item">
+                <strong>CITY GROSS AB</strong> – Store Employee, Stockholm, Sweden<br>
+                <em>10/2022 - 08/2023</em>
+                <ul class="sub-bullets">
+                  <li>Restocked shelves, managed inventory, and maintained store cleanliness.</li>
+                  <li>Assisted customers to ensure a positive shopping experience.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Professional Experiences Card -->
-        <div class="resume-card">
-          <h2>Professional Experiences</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden <em>(03/2024 - 03/2025)</em>
-              <ul class="sub-bullets">
-                <li>Led recruitment for the SAMDAY career fair, attracting 175+ students (18% increase).</li>
-                <li>Generated 230,000 SEK revenue and maintained strong company relationships.</li>
-                <li>Pitched SAMDAY 2025 participation to prospective partners.</li>
-                <li>Built and maintained a network with industry leaders.</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden <em>(06/2024 - 08/2024)</em>
-              <ul class="sub-bullets">
-                <li>Delivered high-quality communication and service to clients.</li>
-                <li>Adapted to various work environments, including moving services and warehouse operations.</li>
-                <li>Managed inventory and collaborated with team members.</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <strong>CITY GROSS AB</strong> – Store Employee, Stockholm, Sweden<br>
-              <em>10/2022 - 08/2023</em>
-              <ul class="sub-bullets">
-                <li>Restocked shelves, managed inventory, and maintained store cleanliness.</li>
-                <li>Assisted customers to ensure a positive shopping experience.</li>
-              </ul>
-            </div>
+        <!-- Right Column: Certifications, Extracurricular Experiences, Skills & Interests -->
+        <div class="right-col">
+          <div class="resume-card">
+            <h2>Certifications</h2>
+            <ul>
+              <li>
+                <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> – Microsoft Learn (Online)<br>
+                <em>08/2024</em>
+              </li>
+              <li>
+                <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong> – Microsoft Learn (Online)<br>
+                <em>01/2025</em>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resume-card">
+            <h2>Extracurricular Experiences</h2>
+            <ul>
+              <li>
+                <strong>Göteborgs Nation</strong>, Lund, Sweden<br>
+                <em>09/2023 - 06/2024</em>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resume-card">
+            <h2>Skills &amp; Interests</h2>
+            <ul>
+              <li><strong>Technical:</strong> Java, JavaFX, SQL, Azure, PowerBI, GitHub, UML, BPMN</li>
+              <li><strong>Languages:</strong> Swedish (native), English (C2), Spanish (A2)</li>
+              <li><strong>Interests:</strong> Social activities, food, student life, football, outdoor adventures</li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Right Column: Certifications, Extracurricular Experiences, Skills & Interests -->
-      <div class="right-col">
-        <div class="resume-card">
-          <h2>Certifications</h2>
-          <ul>
-            <li>
-              <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> – Microsoft Learn (Online)<br>
-              <em>08/2024</em>
-            </li>
-            <li>
-              <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong> – Microsoft Learn (Online)<br>
-              <em>01/2025</em>
-            </li>
-          </ul>
-        </div>
-
-        <div class="resume-card">
-          <h2>Extracurricular Experiences</h2>
-          <ul>
-            <li>
-              <strong>Göteborgs Nation</strong>, Lund, Sweden<br>
-              <em>09/2023 - 06/2024</em>
-            </li>
-          </ul>
-        </div>
-
-        <div class="resume-card">
-          <h2>Skills &amp; Interests</h2>
-          <ul>
-            <li><strong>Technical:</strong> Java, JavaFX, SQL, Azure, PowerBI, GitHub, UML, BPMN</li>
-            <li><strong>Languages:</strong> Swedish (native), English (C2), Spanish (A2)</li>
-            <li><strong>Interests:</strong> Social activities, food, student life, football, outdoor adventures</li>
-          </ul>
-        </div>
+    <footer>
+      <div class="footer-left">
+        <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+        </a>
+        <a href="https://github.com/markussehlberg" target="_blank">
+          <img src="github-sign-2.png" alt="GitHub" class="github-icon" />
+        </a>
+        <a href="mailto:markus_sehlberg@hotmail.com">
+          <img src="email.png" alt="Email" class="email-icon" />
+        </a>
       </div>
-    </div>
-  </div>
+      <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+    </footer>
+  </div><!-- End of #page-wrapper -->
 
-  <footer>
-    <div class="footer-left">
-      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-        <img 
-          src="linkedin-2.png" 
-          alt="LinkedIn" 
-          class="linkedin-icon" 
-        />
-      </a>
-      <a href="https://github.com/markussehlberg" target="_blank">
-        <img 
-          src="github-sign-2.png" 
-          alt="GitHub" 
-          class="github-icon" 
-        />
-      </a>
-      <a href="mailto:markus_sehlberg@hotmail.com">
-        <img 
-          src="email.png" 
-          alt="Email" 
-          class="email-icon" 
-        />
-      </a>
-    </div>
-    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
-  </footer>
-  
-  
   <script>
-    // Fade-out effect on navigation links
+    // Ta bort fade-out-klassen när sidan har laddats klart
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
+      document.getElementById("page-wrapper").classList.remove("fade-out");
     });
+    
+    // Navigationslänkar fade-out effekt
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
         if (this.getAttribute("target") === "_blank") return;
         e.preventDefault();
         const href = this.getAttribute("href");
-        document.body.classList.add("fade-out");
-        setTimeout(function() {
+        document.getElementById("page-wrapper").classList.add("fade-out");
+        setTimeout(() => {
           window.location.href = href;
         }, 300);
       });

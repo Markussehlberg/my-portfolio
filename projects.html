@@ -6,6 +6,13 @@
   <title>Markus Sehlberg - Projects</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Prefetch för snabbare övergångar -->
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="about.html">
+  <link rel="prefetch" href="resume.html">
+  <link rel="prefetch" href="contact.html">
+  
   <style>
     /* Global Page Styles */
     body {
@@ -108,115 +115,128 @@
         padding: 0.4rem 0.8rem;
       }
     }
+    
+    /* Fade-out effekt på vår wrapper */
+    #page-wrapper {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+    #page-wrapper.fade-out {
+      opacity: 0;
+    }
   </style>
 </head>
 <body class="fade-out">
-  <nav class="navbar">
-    <div class="logo">
-      <span class="normal">M</span>
-      <span class="flip">A</span>
-      <span class="normal">R</span>
-      <span class="flip">K</span>
-      <span class="normal">U</span>
-      <span class="flip">S</span>.
-    </div>  
-    <ul class="nav-links nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <!-- HERO SECTION -->
-  <header class="hero-section small-hero">
-    <h1>My coding Projects</h1>
-    <p>View all my coding projects down below.</p>
-  </header>
-  
-  <!-- CAROUSEL CONTAINER -->
-  <main>
-    <div class="carousel-container">
-      <div class="carousel">
-        <!-- Slide 1 -->
-        <div class="carousel-slide">
-          <h2>Logistics System</h2>
-          <span class="date">(01/2024)</span>
-          <p>A system for managing vehicles and trucks across Sweden efficiently.</p>
-          <a href="https://github.com/lu-informatics/ht23-sysa21-isp-ht23-sysa21-gitignorerade.git" target="_blank">View Repository</a>
+  <!-- Wrapper för allt innehåll -->
+  <div id="page-wrapper">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="normal">M</span>
+        <span class="flip">A</span>
+        <span class="normal">R</span>
+        <span class="flip">K</span>
+        <span class="normal">U</span>
+        <span class="flip">S</span>.
+      </div>  
+      <ul class="nav-links nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <header class="hero-section small-hero">
+      <h1>My coding Projects</h1>
+      <p>View all my coding projects down below.</p>
+    </header>
+    
+    <!-- CAROUSEL CONTAINER -->
+    <main>
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <h2>Logistics System</h2>
+            <span class="date">(01/2024)</span>
+            <p>A system for managing vehicles and trucks across Sweden efficiently.</p>
+            <a href="https://github.com/lu-informatics/ht23-sysa21-isp-ht23-sysa21-gitignorerade.git" target="_blank">View Repository</a>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <h2>Project Management system</h2>
+            <span class="date">(09/2024)</span>
+            <p>An SQL Server-based application for managing projects and employee records seamlessly.</p>
+            <a href="https://github.com/lu-informatics/ht24-sysb23-ht24-sysb23-hackstreetboys.git" target="_blank">View Repository</a>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <h2>Recipe application</h2>
+            <span class="date">(03/2025)</span>
+            <p>A .NET MAUI application with SQL Server for managing ingredients and recommending recipes.</p>
+            <a href="https://github.com/lu-informatics/vt25-sysb24-progdesign-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-slide">
+            <h2>Web API for Recipes</h2>
+            <span class="date">(03/2025)</span>
+            <p>A web API with robust database integration to manage recipes and ingredients efficiently.</p>
+            <a href="https://github.com/lu-informatics/vt25-sysb24-it-api-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+          </div>
+          <!-- Slide 5 -->
+          <div class="carousel-slide">
+            <h2>C# Client for Recipes</h2>
+            <span class="date">(03/2025)</span>
+            <p>A C# client that interacts with our web API to manage recipes and ingredients.</p>
+            <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+          </div>
+          <!-- Slide 6 (if intentional duplicate) -->
+          <div class="carousel-slide">
+            <h2>Java Client for Recipes</h2>
+            <span class="date">(03/2025)</span>
+            <p>A client application built in java for managing recipes through our API.</p>
+            <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+          </div>
+          <!-- Slide 7 -->
+          <div class="carousel-slide">
+            <h2>AI Recipe Recommendations</h2>
+            <span class="date">(03/2025)</span>
+            <p>Integration of GPT-4 to deliver AI-powered recipe recommendations based on available ingredients.</p>
+            <a href="https://github.com/lu-informatics/vt25-sysb24-si-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+          </div>
         </div>
-        <!-- Slide 2 -->
-        <div class="carousel-slide">
-          <h2>Project Management system</h2>
-          <span class="date">(09/2024)</span>
-          <p>An SQL Server-based application for managing projects and employee records seamlessly.</p>
-          <a href="https://github.com/lu-informatics/ht24-sysb23-ht24-sysb23-hackstreetboys.git" target="_blank">View Repository</a>
-        </div>
-        <!-- Slide 3 -->
-        <div class="carousel-slide">
-          <h2>Recipe application</h2>
-          <span class="date">(03/2025)</span>
-          <p>A .NET MAUI application with SQL Server for managing ingredients and recommending recipes.</p>
-          <a href="https://github.com/lu-informatics/vt25-sysb24-progdesign-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-        </div>
-        <!-- Slide 4 -->
-        <div class="carousel-slide">
-          <h2>Web API for Recipes</h2>
-          <span class="date">(03/2025)</span>
-          <p>A web API with robust database integration to manage recipes and ingredients efficiently.</p>
-          <a href="https://github.com/lu-informatics/vt25-sysb24-it-api-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-        </div>
-        <!-- Slide 5 -->
-        <div class="carousel-slide">
-          <h2>C# Client for Recipes</h2>
-          <span class="date">(03/2025)</span>
-          <p>A C# client that interacts with our web API to manage recipes and ingredients.</p>
-          <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-        </div>
-        <!-- Slide 6 (if intentional duplicate) -->
-        <div class="carousel-slide">
-          <h2>Java Client for Recipes</h2>
-          <span class="date">(03/2025)</span>
-          <p>A client application built in java for managing recipes through our API.</p>
-          <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-        </div>
-        <!-- Slide 7 -->
-        <div class="carousel-slide">
-          <h2>AI Recipe Recommendations</h2>
-          <span class="date">(03/2025)</span>
-          <p>Integration of GPT-4 to deliver AI-powered recipe recommendations based on available ingredients.</p>
-          <a href="https://github.com/lu-informatics/vt25-sysb24-si-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
-        </div>
+        <!-- Navigation Buttons -->
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
       </div>
-      <!-- Navigation Buttons -->
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
-    </div>
-  </main>
-  
-  <footer>
-    <div class="footer-left">
-      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-        <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
-      </a>
-      <a href="https://github.com/markussehlberg" target="_blank">
-        <img src="github-sign-2.png" alt="GitHub" class="github-icon" />
-      </a>
-      <a href="mailto:markus_sehlberg@hotmail.com">
-        <img src="email.png" alt="Email" class="email-icon" />
-      </a>
-    </div>
-    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
-  </footer>
+    </main>
+    
+    <footer>
+      <div class="footer-left">
+        <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+        </a>
+        <a href="https://github.com/markussehlberg" target="_blank">
+          <img src="github-sign-2.png" alt="GitHub" class="github-icon" />
+        </a>
+        <a href="mailto:markus_sehlberg@hotmail.com">
+          <img src="email.png" alt="Email" class="email-icon" />
+        </a>
+      </div>
+      <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+    </footer>
+  </div><!-- End of #page-wrapper -->
   
   <script>
-    // Remove fade-out class for smooth transitions
+    // Ta bort fade-out-klassen när sidan laddats klart
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
+      document.getElementById("page-wrapper").classList.remove("fade-out");
     });
     
-    // Carousel functionality
+    // Carousel-funktionalitet
     const carousel = document.querySelector('.carousel');
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -264,14 +284,14 @@
       isSwiping = false;
     });
     
-    // Navigation links fade-out effect
+    // Navigationslänkar fade-out effekt via wrappern
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
         if (this.getAttribute("target") === "_blank") return;
         e.preventDefault();
         const href = this.getAttribute("href");
-        document.body.classList.add("fade-out");
+        document.getElementById("page-wrapper").classList.add("fade-out");
         setTimeout(() => window.location.href = href, 300);
       });
     });

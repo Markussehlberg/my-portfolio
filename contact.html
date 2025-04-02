@@ -6,6 +6,13 @@
   <title>Markus Sehlberg - Contact</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Prefetch-länkar för snabbare övergång -->
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="about.html">
+  <link rel="prefetch" href="resume.html">
+  <link rel="prefetch" href="projects.html">
+
   <style>
     /* Make sure html and body take up full height */
     html, body {
@@ -88,83 +95,98 @@
       width: 24px;
       height: 24px;
     }
+    
+    /* Fade-out effect applied on the wrapper */
+    #page-wrapper {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+    #page-wrapper.fade-out {
+      opacity: 0;
+    }
   </style>
 </head>
 <body class="fade-out">
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="logo">
-      <span class="normal">M</span>
-      <span class="flip">A</span>
-      <span class="normal">R</span>
-      <span class="flip">K</span>
-      <span class="normal">U</span>
-      <span class="flip">S</span>.
-    </div>  
-    <ul class="nav-links nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <!-- MAIN CONTACT CONTENT -->
-  <main>
-    <div class="contact-container">
-      <div class="contact-header">
-        <h2>Reach Out to Me</h2>
-        <p>I’m available via email, phone, LinkedIn, or GitHub. Choose the method that suits you best.</p>
+  <!-- Wrapper för allt innehåll -->
+  <div id="page-wrapper">
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="logo">
+        <span class="normal">M</span>
+        <span class="flip">A</span>
+        <span class="normal">R</span>
+        <span class="flip">K</span>
+        <span class="normal">U</span>
+        <span class="flip">S</span>.
+      </div>  
+      <ul class="nav-links nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- MAIN CONTACT CONTENT -->
+    <main>
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2>Reach Out to Me</h2>
+          <p>I’m available via email, phone, LinkedIn, or GitHub. Choose the method that suits you best.</p>
+        </div>
+        <div class="contact-item">
+          <img src="email.png" alt="Email Icon">
+          <span>Email: <a href="mailto:markus_sehlberg@hotmail.com">markus_sehlberg</a></span>
+        </div>
+        <div class="contact-item">
+          <img src="linkedin-2.png" alt="LinkedIn Icon">
+          <span>LinkedIn: <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">Markus Sehlberg</a></span>
+        </div>
+        <div class="contact-item">
+          <img src="phone-call.png" alt="Phone Icon">
+          <span>Phone: <a href="tel:0739636085">0739636085</a></span>
+        </div>
+        <div class="contact-item">
+          <img src="GitHub-sign-2.png" alt="GitHub Icon">
+          <span>GitHub: <a href="https://github.com/Markussehlberg" target="_blank">Markus Sehlberg</a></span>
+        </div>
       </div>
-      <div class="contact-item">
-        <img src="email.png" alt="Email Icon">
-        <span>Email: <a href="mailto:markus_sehlberg@hotmail.com">markus_sehlberg</a></span>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-left">
+        <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+        </a>
+        <a href="https://github.com/Markussehlberg" target="_blank">
+          <img src="GitHub-sign-2.png" alt="GitHub" class="github-icon" />
+        </a>
+        <a href="mailto:markus_sehlberg@hotmail.com">
+          <img src="email.png" alt="Email" class="email-icon" />
+        </a>
       </div>
-      <div class="contact-item">
-        <img src="linkedin-2.png" alt="LinkedIn Icon">
-        <span>LinkedIn: <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">Markus Sehlberg</a></span>
-      </div>
-      <div class="contact-item">
-        <img src="phone-call.png" alt="Phone Icon">
-        <span>Phone: <a href="tel:0739636085">0739636085</a></span>
-      </div>
-      <div class="contact-item">
-        <img src="GitHub-sign-2.png" alt="GitHub Icon">
-        <span>GitHub: <a href="https://github.com/Markussehlberg" target="_blank">Markus Sehlberg</a></span>
-      </div>
-    </div>
-  </main>
-  
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-        <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
-      </a>
-      <a href="https://github.com/Markussehlberg" target="_blank">
-        <img src="GitHub-sign-2.png" alt="GitHub" class="github-icon" />
-      </a>
-      <a href="mailto:markus_sehlberg@hotmail.com">
-        <img src="email.png" alt="Email" class="email-icon" />
-      </a>
-    </div>
-    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
-  </footer>
-  
-  <!-- FADE-OUT SCRIPT -->
+      <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+    </footer>
+  </div><!-- End of page-wrapper -->
+
   <script>
+    // Ta bort fade-out-klassen när sidan har laddats
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
+      document.getElementById("page-wrapper").classList.remove("fade-out");
     });
+    
+    // Lägg till fade-out effekt vid navigering
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
         if (this.getAttribute("target") === "_blank") return;
         e.preventDefault();
         const href = this.getAttribute("href");
-        document.body.classList.add("fade-out");
-        setTimeout(function() {
+        document.getElementById("page-wrapper").classList.add("fade-out");
+        setTimeout(() => {
           window.location.href = href;
         }, 300);
       });
