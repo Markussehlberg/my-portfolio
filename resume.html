@@ -49,12 +49,12 @@
       background-color: #24d199;
       color: #000;
     }
-    /* Resume Container with 90% opaque black background */
+    /* Resume Container with 60% opaque black background */
     .resume-container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.6);
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     }
@@ -66,37 +66,97 @@
       color: #24d199;
       letter-spacing: 1px;
     }
-    /* Resume Sections */
-    .resume-section {
+    /* Two-column layout */
+    .resume-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .left-col,
+    .right-col {
+      flex: 1;
+      min-width: 300px;
+    }
+    /* Card Style (similar to .about-card) for each section */
+    .resume-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 2rem;
     }
-    .resume-section h2 {
+    .resume-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    /* Section Headings inside cards */
+    .resume-card h2 {
       font-size: 1.8rem;
       border-bottom: 2px solid #24d199;
       padding-bottom: 0.3rem;
       margin-bottom: 1rem;
       color: #fff;
     }
-    /* Adjust left margin for section lists */
-    .resume-section ul {
+    /* Timeline styling for milestones inside cards */
+    /* Example Timeline Styles with Centered Circles */
+
+    /* The vertical line itself */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem; /* Reduced padding (was 2rem) */
+  margin-bottom: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;    /* Moved line more to left (was 1rem) */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #24d199; /* The green line */
+}
+
+/* Each timeline item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* The circle marker */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1rem;   /* Moved circle more to left (was 1rem) */
+  top: 0,9rem;    /* Changed from 0rem to 0.5rem to position circles lower */
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #24d199;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+    /* For non-timeline lists */
+    .resume-card ul {
       list-style: none;
       padding: 0;
-      margin-left: -0.5rem;  /* Reduced negative margin */
+      margin-left: -0.5rem;
     }
-    .resume-section li {
+    .resume-card li {
       margin-bottom: 1rem;
       line-height: 1.5;
     }
-    .resume-section p {
+    .resume-card p {
       margin: 0.3rem 0;
     }
-    .resume-section a {
+    .resume-card a {
       color: #24d199;
       text-decoration: none;
     }
     /* Sub-bullet list for professional experience bullet points */
     .sub-bullets {
-      list-style-type: circle;  /* Using circles for bullets */
+      list-style-type: circle;
       margin-left: 10px;
       padding-left: 10px;
     }
@@ -109,6 +169,12 @@
       padding: 1.5rem;
       font-size: 0.9rem;
       color: #aaa;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .resume-columns {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -129,97 +195,102 @@
       <h1>Markus Sehlberg - Resume</h1>
     </header>
 
-    <!-- Education -->
-    <section class="resume-section education">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>Lund University</strong><br>
-          Bachelor of Science in Information Systems (Sys. Kand) <br>
-          <em>08/2023 - 06/2026</em> | GPA: 3.75/4.0
-        </li>
-        <li>
-          <strong>Linné University (Online)</strong><br>
-          Industrial Economics and Organisation <br>
-          <em>06/2024 - 08/2024</em> | GPA: 4.0/4.0
-        </li>
-        <li>
-          <strong>Högskolan i Gävle (Online)</strong><br>
-          Fundamental Dataprocessing (Excel) <br>
-          <em>02/2025 - 06/2025</em>
-        </li>
-      </ul>
-    </section>
+    <div class="resume-columns">
+      <!-- Left Column: Education and Professional Experiences -->
+      <div class="left-col">
+        <!-- Education Card -->
+        <div class="resume-card">
+          <h2>Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>Lund University</strong><br>
+              Bachelor of Science in Information Systems (Sys. Kand) <br>
+              <em>08/2023 - 06/2026</em> | GPA: 3.75/4.0
+            </div>
+            <div class="timeline-item">
+              <strong>Linné University (Online)</strong><br>
+              Industrial Economics and Organisation <br>
+              <em>06/2024 - 08/2024</em> | GPA: 4.0/4.0
+            </div>
+            <div class="timeline-item">
+              <strong>Högskolan i Gävle (Online)</strong><br>
+              Fundamental Dataprocessing (Excel) <br>
+              <em>02/2025 - 06/2025</em>
+            </div>
+          </div>
+        </div>
 
-    <!-- Professional Experience -->
-    <section class="resume-section experience">
-      <h2>Professional Experiences</h2>
-      <ul>
-        <li>
-          <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden<br>
-          <em>03/2024 - 03/2025</em>
-          <ul class="sub-bullets">
-            <li>Led recruitment for the SAMDAY career fair, attracting 175+ students (18% increase).</li>
-            <li>Generated 230,000 SEK revenue and maintained strong company relationships.</li>
-            <li>Pitched SAMDAY 2025 participation to prospective partners.</li>
-            <li>Built and maintained a network with industry leaders.</li>
+        <!-- Professional Experiences Card -->
+        <div class="resume-card">
+          <h2>Professional Experiences</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden<br>
+              <em>03/2024 - 03/2025</em>
+              <ul class="sub-bullets">
+                <li>Led recruitment for the SAMDAY career fair, attracting 175+ students (18% increase).</li>
+                <li>Generated 230,000 SEK revenue and maintained strong company relationships.</li>
+                <li>Pitched SAMDAY 2025 participation to prospective partners.</li>
+                <li>Built and maintained a network with industry leaders.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden<br>
+              <em>06/2024 - 08/2024</em>
+              <ul class="sub-bullets">
+                <li>Delivered high-quality communication and service to clients.</li>
+                <li>Adapted to various work environments, including moving services and warehouse operations.</li>
+                <li>Managed inventory and collaborated with team members.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <strong>CITY GROSS AB</strong> – Store Employee, Stockholm, Sweden<br>
+              <em>10/2022 - 08/2023</em>
+              <ul class="sub-bullets">
+                <li>Restocked shelves, managed inventory, and maintained store cleanliness.</li>
+                <li>Assisted customers to ensure a positive shopping experience.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Certifications, Extracurricular Experiences, Skills & Interests -->
+      <div class="right-col">
+        <div class="resume-card">
+          <h2>Certifications</h2>
+          <ul>
+            <li>
+              <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> – Microsoft Learn (Online)<br>
+              <em>08/2024</em>
+            </li>
+            <li>
+              <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong> – Microsoft Learn (Online)<br>
+              <em>01/2025</em>
+            </li>
           </ul>
-        </li>
-        <li>
-          <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden<br>
-          <em>06/2024 - 08/2024</em>
-          <ul class="sub-bullets">
-            <li>Delivered high-quality communication and service to clients.</li>
-            <li>Adapted to various work environments, including moving services and warehouse operations.</li>
-            <li>Managed inventory and collaborated with team members.</li>
+        </div>
+
+        <div class="resume-card">
+          <h2>Extracurricular Experiences</h2>
+          <ul>
+            <li>
+              <strong>Göteborgs Nation</strong>, Lund, Sweden<br>
+              <em>09/2023 - 06/2024</em>
+            </li>
           </ul>
-        </li>
-        <li>
-          <strong>CITY GROSS AB</strong> – Store Employee, Stockholm, Sweden<br>
-          <em>10/2022 - 08/2023</em>
-          <ul class="sub-bullets">
-            <li>Restocked shelves, managed inventory, and maintained store cleanliness.</li>
-            <li>Assisted customers to ensure a positive shopping experience.</li>
+        </div>
+
+        <div class="resume-card">
+          <h2>Skills &amp; Interests</h2>
+          <ul>
+            <li><strong>Technical:</strong> Java, JavaFX, SQL, Azure, PowerBI, GitHub, UML, BPMN</li>
+            <li><strong>Languages:</strong> Swedish (native), English (C2), Spanish (A2)</li>
+            <li><strong>Interests:</strong> Social activities, food, student life, football, outdoor adventures</li>
           </ul>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Certifications -->
-    <section class="resume-section certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>
-          <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> – Microsoft Learn (Online)<br>
-          <em>08/2024</em>
-        </li>
-        <li>
-          <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong> – Microsoft Learn (Online)<br>
-          <em>01/2025</em>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Extracurricular Experiences -->
-    <section class="resume-section extracurricular">
-      <h2>Extracurricular Experiences</h2>
-      <ul>
-        <li>
-          <strong>Göteborgs Nation</strong>, Lund, Sweden<br>
-          <em>09/2023 - 06/2024</em>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Skills & Interests -->
-    <section class="resume-section skills">
-      <h2>Skills &amp; Interests</h2>
-      <ul>
-        <li><strong>Technical:</strong> Java, JavaFX, SQL, Azure, PowerBI, GitHub, UML, BPMN</li>
-        <li><strong>Languages:</strong> Swedish (native), English (C2), Spanish (A2)</li>
-        <li><strong>Interests:</strong> Social activities, food, student life, football, outdoor adventures</li>
-      </ul>
-    </section>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer>
