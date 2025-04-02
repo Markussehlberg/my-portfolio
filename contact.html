@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Make sure html and body take up full height */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Turn the body into a flex container */
+    body {
+      display: flex;
+      flex-direction: column;
+      background: url('portfolioBackgroundd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      transition: background-color 0.3s, color 0.3s;
+      opacity: 1;
+    }
+
+    /* Let main expand to fill remaining space */
+    main {
+      flex: 1;
+    }
+
     /* Contact Page Custom Styles */
     .contact-container {
       max-width: 600px;
@@ -41,9 +65,32 @@
     .contact-item a:hover {
       text-decoration: underline;
     }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      background-color: transparent;
+      position: relative;
+    }
+    .footer-left {
+      position: absolute;
+      left: 1rem;
+      bottom: 3rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .linkedin-icon,
+    .github-icon,
+    .email-icon {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
-<body>
+<body class="fade-out">
   <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Markus.</div>
@@ -55,8 +102,6 @@
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
-  
- 
   
   <!-- MAIN CONTACT CONTENT -->
   <main>

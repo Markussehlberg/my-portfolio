@@ -249,4 +249,10 @@ html, body {
     height: 24px;
     margin-left: 0rem;
   }
+
+  .logo .flip {
+    display: inline-block;
+    transform: scaleY(-1);
+  }
+  
   
