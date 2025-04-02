@@ -99,49 +99,40 @@
       color: #fff;
     }
     /* Timeline styling for milestones inside cards */
-    /* Example Timeline Styles with Centered Circles */
-
-    /* The vertical line itself */
-.timeline {
-  position: relative;
-  padding-left: 1.5rem; /* Reduced padding (was 2rem) */
-  margin-bottom: 1rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.5rem;    /* Moved line more to left (was 1rem) */
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #24d199; /* The green line */
-}
-
-/* Each timeline item */
-.timeline-item {
-  position: relative;
-  margin-bottom: 1.5rem;
-}
-
-/* The circle marker */
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -1rem;   /* Moved circle more to left (was 1rem) */
-  top: 0,9rem;    /* Changed from 0rem to 0.5rem to position circles lower */
-  width: 1.2rem;
-  height: 1.2rem;
-  background: #24d199;
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-    /* For non-timeline lists */
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem; /* Adjust to position line & items */
+      margin-bottom: 1rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #24d199;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 0rem; /* Adjust to center circle with text */
+      width: 1.2rem;
+      height: 1.2rem;
+      background: #24d199;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    /* For standard bullet lists in each card */
     .resume-card ul {
-      list-style: none;
-      padding: 0;
-      margin-left: -0.5rem;
+      list-style: disc;           /* Use small circle bullets */
+      padding-left: 1.5rem;       /* Indent bullets to the right */
+      margin: 0;                  /* Remove default margin */
     }
     .resume-card li {
       margin-bottom: 1rem;
@@ -157,11 +148,12 @@
     /* Sub-bullet list for professional experience bullet points */
     .sub-bullets {
       list-style-type: circle;
-      margin-left: 10px;
-      padding-left: 10px;
+      margin-left: 2rem;   /* Additional indent for sub-bullets */
+      padding-left: 0.5rem;
+      margin-top: 4rem;  /* Added margin to push down the sub-bullets */
     }
     .sub-bullets li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
     /* Footer */
     footer {
@@ -181,7 +173,7 @@
 <body>
   <nav class="navbar">
     <div class="logo">Markus.</div>
-    <ul class="nav-links">
+    <ul class="nav-links nav-right">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html" class="active">Resume</a></li>
@@ -225,8 +217,7 @@
           <h2>Professional Experiences</h2>
           <div class="timeline">
             <div class="timeline-item">
-              <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden<br>
-              <em>03/2024 - 03/2025</em>
+              <strong>SAMDAY @ Lundaekonomerna AB</strong> – Corporate Relations Coordinator, Lund, Sweden <em>(03/2024 - 03/2025)</em>
               <ul class="sub-bullets">
                 <li>Led recruitment for the SAMDAY career fair, attracting 175+ students (18% increase).</li>
                 <li>Generated 230,000 SEK revenue and maintained strong company relationships.</li>
@@ -235,8 +226,7 @@
               </ul>
             </div>
             <div class="timeline-item">
-              <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden<br>
-              <em>06/2024 - 08/2024</em>
+              <strong>SIMPLEX Bemanning AB</strong> – Logistics Assistant, Stockholm, Sweden <em>(06/2024 - 08/2024)</em>
               <ul class="sub-bullets">
                 <li>Delivered high-quality communication and service to clients.</li>
                 <li>Adapted to various work environments, including moving services and warehouse operations.</li>
@@ -294,8 +284,32 @@
   </div>
 
   <footer>
+    <div class="footer-left">
+      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+        <img 
+          src="linkedin-2.png" 
+          alt="LinkedIn" 
+          class="linkedin-icon" 
+        />
+      </a>
+      <a href="https://github.com/markussehlberg" target="_blank">
+        <img 
+          src="github-sign-2.png" 
+          alt="GitHub" 
+          class="github-icon" 
+        />
+      </a>
+      <a href="mailto:markus_sehlberg@hotmail.com">
+        <img 
+          src="email.png" 
+          alt="Email" 
+          class="email-icon" 
+        />
+      </a>
+    </div>
     <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
   </footer>
+  
   
   <script>
     // Fade-out effect on navigation links

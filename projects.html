@@ -6,9 +6,58 @@
   <title>Markus Sehlberg - Projects</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Page-specific styling for the projects page */
+    body {
+      background: url('portfolioBackgroundd.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .hero-section.small-hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #fff;
+    }
+    .projects-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .project-card h2 {
+      color: #24d199;
+      margin-bottom: 0.75rem;
+    }
+    .project-card p {
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    .project-card a {
+      text-decoration: none;
+      color: #24d199;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .project-card a:hover {
+      color: #1ca67b;
+    }
+  </style>
 </head>
-<body>
-
+<body class="fade-out">
   <nav class="navbar">
     <div class="logo">Markus.</div>
     <ul class="nav-links nav-right">
@@ -19,50 +68,92 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
+  
+  <!-- HERO SECTION -->
   <header class="hero-section small-hero">
     <h1>My Projects</h1>
+    <p>Explore my repositories along with a short description of each project.</p>
   </header>
-
+  
+  <!-- PROJECTS CONTAINER -->
   <main>
-    <section class="projects-section">
-      <ul>
-        <li><strong>MealPlanner App:</strong> C# &amp; SQL-baserad app för att hantera matbudgetar.</li>
-        <li><strong>Movie Recommender:</strong> Web app med AI för personliga filmtips.</li>
-        <li><strong>Portfolio Website:</strong> Denna sajt, byggd med HTML &amp; CSS för att visa mitt arbete.</li>
-      </ul>
-    </section>
+    <div class="projects-container">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <h2>Logistics System <span style="font-size:0.8rem;">(01/2024)</span></h2>
+        <p>A logistics system for managing vehicles and trucks across Sweden.</p>
+        <a href="https://github.com/lu-informatics/ht23-sysa21-isp-ht23-sysa21-gitignorerade.git" target="_blank">View Repository</a>
+      </div>
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <h2>Project Management System <span style="font-size:0.8rem;">(09/2024)</span></h2>
+        <p>An SQL Server based application for managing projects and handling employee records.</p>
+        <a href="https://github.com/lu-informatics/ht24-sysb23-ht24-sysb23-hackstreetboys.git" target="_blank">View Repository</a>
+      </div>
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <h2>Recipe Recommender App <span style="font-size:0.8rem;">(03/2025)</span></h2>
+        <p>A .NET MAUI application with SQL Server that allows students to manage ingredients and get recipe recommendations.</p>
+        <a href="https://github.com/lu-informatics/vt25-sysb24-progdesign-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+      </div>
+      <!-- Project Card 4 -->
+      <div class="project-card">
+        <h2>Web API for Recipes <span style="font-size:0.8rem;">(03/2025)</span></h2>
+        <p>A web API created with database integration to support recipe and ingredient management.</p>
+        <a href="https://github.com/lu-informatics/vt25-sysb24-it-api-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+      </div>
+      <!-- Project Card 5 -->
+      <div class="project-card">
+        <h2>C# Client for Recipe Management <span style="font-size:0.8rem;">(03/2025)</span></h2>
+        <p>A C# client that makes HTTP/URL requests to the web API, managing ingredients and recipes.</p>
+        <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+      </div>
+      <!-- Project Card 6 (Duplicate if intentional, or adjust as needed) -->
+      <div class="project-card">
+        <h2>C# Client for Recipe Management <span style="font-size:0.8rem;">(03/2025)</span></h2>
+        <p>A C# client for managing ingredients and recipes via our web API.</p>
+        <a href="https://github.com/lu-informatics/vt25-sysb24-it-client-java-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+      </div>
+      <!-- Project Card 7 -->
+      <div class="project-card">
+        <h2>AI Recipe Recommendations <span style="font-size:0.8rem;">(03/2025)</span></h2>
+        <p>Integrated GPT-4 to provide AI-powered recipe recommendations based on user-input ingredients.</p>
+        <a href="https://github.com/lu-informatics/vt25-sysb24-si-vt25-sysb25-committothebit.git" target="_blank">View Repository</a>
+      </div>
+    </div>
   </main>
-
+  
   <footer>
+    <div class="footer-left">
+      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+        <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+      </a>
+      <a href="https://github.com/markussehlberg" target="_blank">
+        <img src="github-sign-2.png" alt="GitHub" class="github-icon" />
+      </a>
+      <a href="mailto:markus_sehlberg@hotmail.com">
+        <img src="email.png" alt="Email" class="email-icon" />
+      </a>
+    </div>
     <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
   </footer>
+  
   <script>
-    // On page load, ensure the body is fully visible
+    // Fade-out effect for smooth transitions
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
     });
-  
-    // Add click listeners to all navigation links
+    
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
-        // Skip external links or ones opening in new tabs
         if (this.getAttribute("target") === "_blank") return;
-        
         e.preventDefault();
         const href = this.getAttribute("href");
-  
-        // Trigger the fade out effect
         document.body.classList.add("fade-out");
-  
-        // Wait for the transition to complete before redirecting
-        setTimeout(function() {
-          window.location.href = href;
-        }, 300); // Adjust this timeout to match your CSS transition duration
+        setTimeout(() => window.location.href = href, 300);
       });
     });
   </script>
-  
 </body>
 </html>

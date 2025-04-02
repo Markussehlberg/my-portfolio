@@ -237,3 +237,10 @@ html, body {
     gap: 1rem;           /* Adjusts spacing between icons */
     align-items: center; /* Vertically centers the icons */
   }
+
+  .email-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 0rem;
+  }
+  
