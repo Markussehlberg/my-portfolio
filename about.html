@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,13 @@
   <title>Markus Sehlberg - About</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Lägg till prefetch för att ladda sidorna i förväg -->
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="resume.html">
+  <link rel="prefetch" href="projects.html">
+  <link rel="prefetch" href="contact.html">
+
   <style>
     /* Additional styles specific to About page */
     .about-hero {
@@ -63,133 +69,135 @@
         grid-template-columns: 1fr;
       }
     }
+    
+    /* Gemensam fade-out effekt på wrappern */
+    #page-wrapper {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+    #page-wrapper.fade-out {
+      opacity: 0;
+    }
   </style>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <span class="normal">M</span>
-      <span class="flip">A</span>
-      <span class="normal">R</span>
-      <span class="flip">K</span>
-      <span class="normal">U</span>
-      <span class="flip">S</span>.
-    </div>  
-    <ul class="nav-links nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <header class="about-hero">
-    <h1>About Me</h1>
-    <p>21 years old | Informatics Student at Lund University | Graduating 2026</p>
-  </header>
-  
-  <main>
-    <div class="about-content">
-      <section class="about-section">
-        <div class="about-card">
-          <h3>Who Am I?</h3>
-          <p>
-            Hi, I'm Markus Sehlberg – a tech enthusiast with a passion for coding and innovation. I blend my academic pursuits with a lively student life, always looking to explore new ideas and push my limits.
-          </p>
-        </div>
-        <div class="about-card">
-          <h3>My Studies</h3>
-          <p>
-            I'm studying Informatics at Lund University, one of Sweden's most prestigious institutions. With a graduation set for 2026, I'm constantly immersed in projects that challenge and expand my technical skills.
-          </p>
-        </div>
-        <div class="about-card">
-          <h3>Interests &amp; Hobbies</h3>
-          <p>
-            Outside of studies, I enjoy a vibrant social life:
-          </p>
-          <ul>
-            <li>Hanging out with friends</li>
-            <li>Embracing the student lifestyle</li>
-            <li>Watching and playing football</li>
-            <li>Exploring new tech trends and side projects</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <h3>Career Goals</h3>
-          <p>
-            I'm actively looking for internship opportunities to gain hands-on experience in the tech industry. My goal is to build practical skills that will propel my career and help me contribute innovative solutions.
-          </p>
-        </div>
-        <div class="about-card">
-          <h3>Skills &amp; Tools</h3>
-          <p>
-            I have hands-on experience with a range of technologies:
-          </p>
-          <ul>
-            <li>Programming: HTML, CSS, JavaScript, C#</li>
-            <li>Frameworks: .NET, React</li>
-            <li>Databases: SQL</li>
-            <li>Tools: Git, Azure</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <h3>Fun Facts</h3>
-          <p>
-            A few things you might not know:
-          </p>
-          <ul>
-            <li>I love spontaneous road trips</li>
-            <li>I'm a huge football fan</li>
-            <li>I enjoy trying out new cuisines</li>
-            <li>I never back down from a good challenge</li>
-          </ul>
-        </div>
-      </section>
-    </div>
-  </main>
-  
-  <footer>
-    <div class="footer-left">
-      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-        <img 
-          src="linkedin-2.png" 
-          alt="LinkedIn" 
-          class="linkedin-icon" 
-        />
-      </a>
-      <a href="https://github.com/markussehlberg" target="_blank">
-        <img 
-          src="github-sign-2.png" 
-          alt="GitHub" 
-          class="github-icon" 
-        />
-      </a>
-      <a href="mailto:markus_sehlberg@hotmail.com">
-        <img 
-          src="email.png" 
-          alt="Email" 
-          class="email-icon" 
-        />
-      </a>
-    </div>
-    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
-  </footer>
-  
-  
+<body class="fade-out">
+  <!-- Wrapper för allt innehåll -->
+  <div id="page-wrapper">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="normal">M</span>
+        <span class="flip">A</span>
+        <span class="normal">R</span>
+        <span class="flip">K</span>
+        <span class="normal">U</span>
+        <span class="flip">S</span>.
+      </div>  
+      <ul class="nav-links nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <header class="about-hero">
+      <h1>About Me</h1>
+      <p>21 years old | Informatics Student at Lund University | Graduating 2026</p>
+    </header>
+    
+    <main>
+      <div class="about-content">
+        <section class="about-section">
+          <div class="about-card">
+            <h3>Who Am I?</h3>
+            <p>
+              Hi, I'm Markus Sehlberg – a tech enthusiast with a passion for coding and innovation. I blend my academic pursuits with a lively student life, always looking to explore new ideas and push my limits.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>My Studies</h3>
+            <p>
+              I'm studying Informatics at Lund University, one of Sweden's most prestigious institutions. With a graduation set for 2026, I'm constantly immersed in projects that challenge and expand my technical skills.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>Interests &amp; Hobbies</h3>
+            <p>
+              Outside of studies, I enjoy a vibrant social life:
+            </p>
+            <ul>
+              <li>Hanging out with friends</li>
+              <li>Embracing the student lifestyle</li>
+              <li>Watching and playing football</li>
+              <li>Exploring new tech trends and side projects</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Career Goals</h3>
+            <p>
+              I'm actively looking for internship opportunities to gain hands-on experience in the tech industry. My goal is to build practical skills that will propel my career and help me contribute innovative solutions.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>Skills &amp; Tools</h3>
+            <p>
+              I have hands-on experience with a range of technologies:
+            </p>
+            <ul>
+              <li>Programming: HTML, CSS, JavaScript, C#</li>
+              <li>Frameworks: .NET, React</li>
+              <li>Databases: SQL</li>
+              <li>Tools: Git, Azure</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Fun Facts</h3>
+            <p>
+              A few things you might not know:
+            </p>
+            <ul>
+              <li>I love spontaneous road trips</li>
+              <li>I'm a huge football fan</li>
+              <li>I enjoy trying out new cuisines</li>
+              <li>I never back down from a good challenge</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <footer>
+      <div class="footer-left">
+        <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+        </a>
+        <a href="https://github.com/markussehlberg" target="_blank">
+          <img src="github-sign-2.png" alt="GitHub" class="github-icon" />
+        </a>
+        <a href="mailto:markus_sehlberg@hotmail.com">
+          <img src="email.png" alt="Email" class="email-icon" />
+        </a>
+      </div>
+      <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+    </footer>
+  </div><!-- #page-wrapper slutar här -->
+
   <script>
+    // Ta bort fade-out när sidan laddats klart
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
+      document.getElementById("page-wrapper").classList.remove("fade-out");
     });
     
+    // Fade-out effekt vid navigering med wrappern
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
         if (this.getAttribute("target") === "_blank") return;
         e.preventDefault();
         const href = this.getAttribute("href");
-        document.body.classList.add("fade-out");
+        document.getElementById("page-wrapper").classList.add("fade-out");
         setTimeout(() => {
           window.location.href = href;
         }, 300);

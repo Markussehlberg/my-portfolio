@@ -6,6 +6,13 @@
   <title>Markus - Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Lägg till prefetch-länkar för att ladda sidorna i förväg -->
+  <link rel="prefetch" href="about.html">
+  <link rel="prefetch" href="resume.html">
+  <link rel="prefetch" href="projects.html">
+  <link rel="prefetch" href="contact.html">
+
   <style>
     /* Döljer nav-länkarna initialt och förbereder för pop-up animation */
     .nav-links li {
@@ -17,82 +24,80 @@
       opacity: 1;
       transform: translateX(0);
     }
+    
+    /* Fade-out effekt på den gemensamma wrappern */
+    #page-wrapper {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+    #page-wrapper.fade-out {
+      opacity: 0;
+    }
   </style>
 </head>
 <body class="fade-out">
-  <nav class="navbar">
-    <div class="logo">
-      <span class="normal">M</span>
-      <span class="flip">A</span>
-      <span class="normal">R</span>
-      <span class="flip">K</span>
-      <span class="normal">U</span>
-      <span class="flip">S</span>.
-    </div>    
-    <ul class="nav-links nav-right">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <!-- HERO SECTION -->
-  <header class="hero-section">
-    <div class="hero-container">
-      <div class="hero-text">
-        <!-- Ändrad rubriktext -->
-        <h1 style="margin-top: -1cm;">Hi there, My name is Markus Sehlberg</h1>
-        <!-- Övriga element förblir statiska -->
-        <h2 class="role" style="margin-top: -0.5cm;">IT-student from Lund University</h2>
-        <p class="intro-text">
-            Hello and welcome to my portfolio.
-            I’m an IT student from Sweden with a strong passion for data analysis and business intelligence. I enjoy turning data into insights and using technology to create smart, user-focused digital solutions. Feel free to learn more about me and my academical journey in this HTML and CSS-created portfolio.
-        </p>
-        <a href="contact.html" class="btn hire-me-button">Get in touch!</a>
+  <!-- Allt innehåll placeras inuti en wrapper -->
+  <div id="page-wrapper">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="normal">M</span>
+        <span class="flip">A</span>
+        <span class="normal">R</span>
+        <span class="flip">K</span>
+        <span class="normal">U</span>
+        <span class="flip">S</span>.
+      </div>    
+      <ul class="nav-links nav-right">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1 style="margin-top: -1cm;">Hi there, My name is Markus Sehlberg</h1>
+          <h2 class="role" style="margin-top: -0.5cm;">IT-student from Lund University</h2>
+          <p class="intro-text">
+              Hello and welcome to my portfolio.
+              I’m an IT student from Sweden with a strong passion for data analysis and business intelligence. I enjoy turning data into insights and using technology to create smart, user-focused digital solutions. Feel free to learn more about me and my academical journey in this HTML and CSS-created portfolio.
+          </p>
+          <a href="contact.html" class="btn hire-me-button">Get in touch!</a>
+        </div>
       </div>
-    </div>
-  </header>
-  
-  <footer>
-    <div class="footer-left">
-      <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-        <img 
-          src="linkedin-2.png" 
-          alt="LinkedIn" 
-          class="linkedin-icon" 
-        />
-      </a>
-      <a href="https://github.com/markussehlberg" target="_blank">
-        <img 
-          src="github-sign-2.png" 
-          alt="GitHub" 
-          class="github-icon" 
-        />
-      </a>
-      <a href="mailto:markus_sehlberg@hotmail.com">
-        <img 
-          src="email.png" 
-          alt="Email" 
-          class="email-icon" 
-        />
-      </a>
-    </div>
-    <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
-  </footer>
-  
+    </header>
+    
+    <footer>
+      <div class="footer-left">
+        <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
+          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+        </a>
+        <a href="https://github.com/markussehlberg" target="_blank">
+          <img src="github-sign-2.png" alt="GitHub" class="github-icon" />
+        </a>
+        <a href="mailto:markus_sehlberg@hotmail.com">
+          <img src="email.png" alt="Email" class="email-icon" />
+        </a>
+      </div>
+      <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
+    </footer>
+  </div> <!-- #page-wrapper slut -->
+
   <script>
+    // När sidan är fulladdad, ta bort fade-out på både body och #page-wrapper
     document.addEventListener("DOMContentLoaded", function() {
-      // Ta bort eventuell initial fade-out på body
       document.body.classList.remove("fade-out");
-      
-      // Hämta h1-elementet med typningstexten
+      document.getElementById("page-wrapper").classList.remove("fade-out");
+
+      // Typningseffekt på h1
       const h1 = document.querySelector('.hero-text h1');
       const fullText = h1.innerHTML;
-      h1.innerHTML = ""; // Rensa texten för typningseffekt
-
-      // Typningseffektfunktion
+      h1.innerHTML = "";
+      
       function typeWriter(element, text, delay, callback) {
         let i = 0;
         let interval = setInterval(() => {
@@ -105,32 +110,31 @@
         }, delay);
       }
       
-      // Starta typningseffekten för h1 med 50ms mellan varje tecken
       typeWriter(h1, fullText, 50, function() {
-        // När typningseffekten är klar, animera fram nav-länkarna en efter en
+        // Efter typning, visa nav-länkarna en efter en
         const navItems = document.querySelectorAll('.nav-links li');
         navItems.forEach((item, index) => {
           setTimeout(() => {
             item.classList.add('visible');
-          }, index * 100); // 100ms fördröjning mellan varje tab
+          }, index * 100);
         });
       });
     });
 
-    // Befintlig fade-out vid navigering
+    // Lägg till fade-out effekt vid navigering (för både body och #page-wrapper)
     const links = document.querySelectorAll("nav a, .hire-me-button");
     links.forEach(link => {
       link.addEventListener("click", function(e) {
         if (this.getAttribute("target") === "_blank") return;
         e.preventDefault();
         const href = this.getAttribute("href");
-        document.body.classList.add("fade-out");
+        // Lägg till fade-out på wrappern istället för hela body
+        document.getElementById("page-wrapper").classList.add("fade-out");
         setTimeout(function() {
           window.location.href = href;
-        }, 300);
+        }, 300); // Matchar transition-tiden
       });
     });
   </script>
-  
 </body>
 </html>
