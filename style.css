@@ -32,10 +32,12 @@ html, body {
     align-items: center;
     padding: 1rem 2rem;
     background-color: transparent;
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     z-index: 800;
   }
+  
+  
   
   /* LOGO */
   .logo {
