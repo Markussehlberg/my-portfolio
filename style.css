@@ -258,3 +258,70 @@ html, body {
   }
   
   
+/* MOBILE SPECIFIC STYLES */
+@media only screen and (max-width: 768px) {
+  /* Reduce overall font-size for better scaling */
+  body {
+    font-size: 14px;
+  }
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  /* Stack nav links vertically on mobile */
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav-right {
+    transform: none;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .home-page .nav-links {
+    top: 40px;
+    transform: none;
+  }
+  /* HERO SECTION adjustments */
+  .hero-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3cm;
+  }
+  .hero-container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .hero-text {
+    margin-right: 0;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text h2.role {
+    font-size: 1.5rem;
+  }
+  .intro-text {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .hero-image {
+    margin-top: 1rem;
+  }
+  /* Main section padding */
+  main section {
+    padding: 2rem 1rem;
+  }
+  /* Footer adjustments */
+  footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  .footer-left {
+    position: static;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+}
