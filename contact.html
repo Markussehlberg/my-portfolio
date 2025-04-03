@@ -7,21 +7,20 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
-  <!-- Prefetch-länkar för snabbare övergång -->
+  <!-- Prefetch links for faster navigation -->
   <link rel="prefetch" href="index.html">
   <link rel="prefetch" href="about.html">
   <link rel="prefetch" href="resume.html">
   <link rel="prefetch" href="projects.html">
 
   <style>
-    /* Make sure html and body take up full height */
+    /* Ensure html and body take up full height */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
     }
-
-    /* Turn the body into a flex container */
+    /* Set up body as a flex container so footer can be pushed down */
     body {
       display: flex;
       flex-direction: column;
@@ -32,12 +31,19 @@
       transition: background-color 0.3s, color 0.3s;
       opacity: 1;
     }
-
-    /* Let main expand to fill remaining space */
+    /* Page wrapper as a flex container */
+    #page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+    /* Let main content expand to fill available space */
     main {
       flex: 1;
     }
-
+    
     /* Contact Page Custom Styles */
     .contact-container {
       max-width: 600px;
@@ -72,22 +78,54 @@
     .contact-item a:hover {
       text-decoration: underline;
     }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
       background-color: transparent;
-      position: relative;
+      z-index: 800;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding: 0.5rem;
+      transition: color 0.3s, background-color 0.3s;
+      border-radius: 4px;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #0d0d0d;
+      background-color: #24d199;
+    }
+    
+    /* Footer styling to push it further down */
+    footer {
+      margin-top: auto; /* Pushes footer to bottom of flex container */
+      padding: 2rem 1rem;
+      margin-top: 6rem; /* Additional space above footer */
+      font-size: 0.9rem;
+      text-align: center;
+      background-color: transparent;
     }
     .footer-left {
-      position: absolute;
-      left: 1rem;
-      bottom: 3rem;
       display: flex;
       gap: 1rem;
       align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
     .linkedin-icon,
     .github-icon,
@@ -96,18 +134,14 @@
       height: 24px;
     }
     
-    /* Fade-out effect applied on the wrapper */
-    #page-wrapper {
-      transition: opacity 0.3s ease-in-out;
-      opacity: 1;
-    }
+    /* Fade-out effect */
     #page-wrapper.fade-out {
       opacity: 0;
     }
   </style>
 </head>
 <body class="fade-out">
-  <!-- Wrapper för allt innehåll -->
+  <!-- Wrapper for all content -->
   <div id="page-wrapper">
     <!-- NAVIGATION -->
     <nav class="navbar">
@@ -158,27 +192,27 @@
     <footer>
       <div class="footer-left">
         <a href="https://www.linkedin.com/in/markus-sehlberg-3020b2248/" target="_blank">
-          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon" />
+          <img src="linkedin-2.png" alt="LinkedIn" class="linkedin-icon">
         </a>
         <a href="https://github.com/Markussehlberg" target="_blank">
-          <img src="GitHub-sign-2.png" alt="GitHub" class="github-icon" />
+          <img src="GitHub-sign-2.png" alt="GitHub" class="github-icon">
         </a>
         <a href="mailto:markus_sehlberg@hotmail.com">
-          <img src="email.png" alt="Email" class="email-icon" />
+          <img src="email.png" alt="Email" class="email-icon">
         </a>
       </div>
       <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
     </footer>
   </div><!-- End of page-wrapper -->
-
+  
   <script>
-    // Ta bort fade-out-klassen när sidan har laddats
+    // Remove fade-out class when the page is fully loaded
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
       document.getElementById("page-wrapper").classList.remove("fade-out");
     });
     
-    // Lägg till fade-out effekt vid navigering
+    // Fade-out effect when navigating away
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {
