@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Markus Sehlberg - Projects</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
   <!-- Prefetch för snabbare övergångar -->
@@ -145,6 +146,18 @@
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      
+      <div class="hamburger" style="display: none;">&#9776;</div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay (hidden on desktop via inline style) -->
+    <div class="mobile-menu" style="display: none;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
     </nav>
     
     <!-- HERO SECTION -->
@@ -228,7 +241,7 @@
       <p>&copy; 2025 Markus Sehlberg. All Rights Reserved.</p>
     </footer>
   </div><!-- End of #page-wrapper -->
-  
+  <script src="mobile.js"></script>
   <script>
     // Ta bort fade-out-klassen när sidan laddats klart
     document.addEventListener("DOMContentLoaded", function() {

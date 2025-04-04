@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Markus - Home</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Mobile CSS (only applies on screens up to 768px) -->
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- Lägg till prefetch-länkar för att ladda sidorna i förväg -->
@@ -54,7 +56,18 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <!-- Hamburger Icon for Mobile (hidden on desktop via inline style) -->
+      <div class="hamburger" style="display: none;">&#9776;</div>
     </nav>
+    
+    <!-- Mobile Menu Overlay (hidden on desktop via inline style) -->
+    <div class="mobile-menu" style="display: none;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
     
     <!-- HERO SECTION -->
     <header class="hero-section">
@@ -64,7 +77,8 @@
           <h2 class="role" style="margin-top: -0.5cm;">IT-student from Lund University</h2>
           <p class="intro-text">
               Hello and welcome to my portfolio.
-              I'm currently studying IT at Lund University, with a strong interest in data analysis and business intelligence. I enjoy working with data to find patterns and insights, and I’m passionate about using technology to solve real-world problems in smart and user-friendly ways. Feel free to explore this HTML and CSS-created portfolio to learn more about me and my studies.  </p>
+              I'm currently studying IT at Lund University, with a strong interest in data analysis and business intelligence. I enjoy working with data to find patterns and insights, and I’m passionate about using technology to solve real-world problems in smart and user-friendly ways. Feel free to explore this HTML and CSS-created portfolio to learn more about me and my studies.
+          </p>
           <a href="contact.html" class="btn hire-me-button">Get in touch!</a>
         </div>
       </div>
@@ -86,6 +100,8 @@
     </footer>
   </div> <!-- #page-wrapper slut -->
 
+  <!-- Mobile JS -->
+  <script src="mobile.js"></script>
   <script>
     // När sidan är fulladdad, ta bort fade-out på både body och #page-wrapper
     document.addEventListener("DOMContentLoaded", function() {

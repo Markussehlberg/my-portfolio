@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Markus Sehlberg - Resume</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
-  <!-- Prefetch-länkar för att ladda sidorna i förväg -->
+  <!-- Prefetch links -->
   <link rel="prefetch" href="index.html">
   <link rel="prefetch" href="about.html">
   <link rel="prefetch" href="projects.html">
   <link rel="prefetch" href="contact.html">
   
   <style>
-    /* Global Styles */
+    /* Global Styles for Resume page */
     body {
       margin: 0;
       padding: 0;
@@ -54,7 +55,7 @@
       background-color: #24d199;
       color: #000;
     }
-    /* Resume Container with 60% opaque black background */
+    /* Resume Container */
     .resume-container {
       max-width: 1200px;
       margin: 2rem auto;
@@ -174,7 +175,7 @@
       }
     }
     
-    /* Fade-out effekt på wrappern */
+    /* Fade-out effect on wrapper */
     #page-wrapper {
       transition: opacity 0.3s ease-in-out;
       opacity: 1;
@@ -185,7 +186,7 @@
   </style>
 </head>
 <body class="fade-out">
-  <!-- Wrapper för allt innehåll -->
+  <!-- Wrapper for all content -->
   <div id="page-wrapper">
     <nav class="navbar">
       <div class="logo">
@@ -203,6 +204,19 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+
+      <div class="hamburger" style="display: none;">&#9776;</div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay (hidden on desktop via inline style) -->
+    <div class="mobile-menu" style="display: none;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
     </nav>
 
     <div class="resume-container">
@@ -322,14 +336,15 @@
     </footer>
   </div><!-- End of #page-wrapper -->
 
+  <script src="mobile.js"></script>
   <script>
-    // Ta bort fade-out-klassen när sidan har laddats klart
+    // Remove fade-out class when the page is fully loaded
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("fade-out");
       document.getElementById("page-wrapper").classList.remove("fade-out");
     });
     
-    // Navigationslänkar fade-out effekt
+    // Fade-out effect when navigating
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(link => {
       link.addEventListener("click", function(e) {

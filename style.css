@@ -32,8 +32,6 @@ body.fade-out {
   align-items: center;
   padding: 1rem 2rem;
   background-color: transparent;
-  /* position: sticky;
-  top: 0; */
   z-index: 800;
 }
 
@@ -69,15 +67,14 @@ body.fade-out {
   background-color: #24d199;
 }
 
-/* Right-aligned nav for non-home pages */
+/* Right-aligned nav for non-home pages 
+   UPDATED: Removed transform: translateX(-2cm) and margin-top: 0.5cm */
 .nav-right {
   margin-left: auto;
   margin-right: -1rem;
   display: flex;
   align-items: center;
   gap: 2rem;
-  transform: translateX(-2cm);
-  margin-top: 0.5cm;
 }
 
 /* HOME PAGE NAV: center the menu & shift it down a bit */
@@ -234,21 +231,21 @@ footer {
   position: absolute;
   left: 1rem;
   bottom: 3rem;
-  display: flex;       /* Added flex display */
-  gap: 1rem;           /* Adjusts spacing between icons */
-  align-items: center; /* Vertically centers the icons */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .email-icon {
   width: 24px;
   height: 24px;
-  margin-left: 0rem;
+  margin-left: 0;
 }
 
 .phone-icon {
   width: 24px;
   height: 24px;
-  margin-left: 0rem;
+  margin-left: 0;
 }
 
 .logo .flip {
